@@ -1,0 +1,77 @@
+=========== What is python?
+* Python - a high-level/scripting language.
+That means it is compiled into something else
+before it's turned into 1's and 0's. It's used
+for web, robotics, data science, cybersecurity and
+other stuff
+
+=========== What is flask?
+* Flask - a web framework and Python module that is used
+to build web apps
+
+=========== What is an API?
+* API (Application programming interface) - a go-between
+that let's one app talk to another
+
+=========== Sorry forgot to tell you to install Postman
+# https://www.postman.com/downloads/
+
+=========== What is Postman?
+* Postman - a platform that steps through API request methods
+
+=========== Force install flask
+import subprocess
+import sys
+try:    
+    from flask import Flask, render_template, jsonify
+except ImportError:
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'flask'])
+finally:
+    from flask import Flask, render_template, jsonify
+
+============ Lesson Steps
+
+Step 1:
+# Show an api with routes and output
+# https://jsonplaceholder.typicode.com/posts <<< posts
+# https://jsonplaceholder.typicode.com/posts/10 <<< post where id = 10
+# https://jsonplaceholder.typicode.com/posts/10/comments <<< post comments where post id = 10
+
+Step 2:
+# Explain request methods
+# GET - ask for existing info
+# POST - create new info
+# PUT - update existing info
+# DELETE - remove info
+
+Step 3:
+# Explain csv's and why we are using it
+
+Step 4:
+# Explain different csv modes: 'r', 'a', 'w'
+
+Step 5:
+# Start with this code below
+# Print output
+# open csv
+with open('db.csv') as people_file:
+    # sets place in memory
+    people = csv.reader(people_file)
+    # gets header row
+    # takes header row out of future iterations
+    header = next(people_file)
+    # print("line 6", header)
+    for item in people:
+        print(item)
+
+Step 6:
+# create function from above code
+# create first route
+
+Step 7:
+# create function that grabs info by id
+
+Step 8:
+# to create post_new_person function
+# to test in postman choose POST > Body > form-data
+## use key and value to enter new person info
